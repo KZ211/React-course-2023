@@ -2,12 +2,13 @@ import React from 'react';
 
 interface NameProps {
   name: string;
+  interact: ()=>void;
 }
 
-const Button: React.FC<NameProps> = (props: any) => {
+const Button: React.FC<NameProps> = ({name , interact}) => {
   return (
     <div>
-      <button type='button' className='my-1 btn btn-primary'>{props.name}</button>
+      <button onClick={interact} type='button' className='my-1 btn btn-primary'>{name}</button>
     </div>
   );
 };

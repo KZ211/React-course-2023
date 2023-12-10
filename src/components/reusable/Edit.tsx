@@ -1,19 +1,16 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 import EditLogo from '../../assets/edit.svg'
 
-const Button: React.FC = () => {
-    let activated = false;
-    const [enteredModal, setModal] = useState(activated);
+interface ModalChange{
+  modalState: () => void;
+}
 
-    function changeModalHandler(){
-        enteredModal === true ? setModal(false): setModal(true); 
-        console.log(enteredModal);
-    }
+const Button: React.FC<ModalChange> = ({modalState}) => {
 
     return (
     <div>
-      <a href="#" onClick={changeModalHandler}><img src={EditLogo} alt="Edit" height='50px'/></a>
+      <button onClick={modalState} ><img src={EditLogo} alt="Edit" height='50px'/></button>
     </div>
   );
 };
