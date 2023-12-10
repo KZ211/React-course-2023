@@ -7,7 +7,7 @@ interface NameProps {
 const Button: React.FC<NameProps> = (props: any) => {
   return (
     <div>
-      <button>{props.name}</button>
+      <button type='button' className='my-1 btn btn-primary'>{props.name}</button>
     </div>
   );
 };
