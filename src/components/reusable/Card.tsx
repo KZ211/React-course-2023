@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Edit from './Edit';
+
 interface CardProps{
     image:string,
     title:string,
@@ -13,6 +15,7 @@ const Card: React.FC<CardProps> = (props:any) => {
 
     return (
         <div className='card' style={cardStyle}>
+        <Edit/>
         <img src={props.image} className='card-img-top' alt='Imagen Random'/>
         <div className='card-body'>
           <h5 className='card-title'>{props.title}</h5>
