@@ -1,11 +1,15 @@
 
 import MainNavigation from "./mainNavigation/MainNavigation";
 
-const Layout: React.FC = () => {
+interface Props{
+    modalstate: () => void
+}
+
+const Layout: React.FC<Props> = ({modalstate}) => {
     return (
         <div className="layout">
             <nav className="mainNavigation">
-            <MainNavigation />
+            <MainNavigation modalState={modalstate}/>
             </nav>
         </div>
         

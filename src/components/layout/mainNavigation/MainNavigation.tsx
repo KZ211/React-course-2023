@@ -2,10 +2,11 @@ import { MdPostAdd, MdMessage } from "react-icons/md";
 
 import Button from '../../reusable/Button'
 
-const MainNavigation : React.FC = () =>{
-    function sayHello(){
-        console.log('hello');
-    }
+interface ModalChange{
+    modalState: () => void;
+  }
+
+const MainNavigation : React.FC<ModalChange> = ({modalState}) => {
 
     return (
         <>
@@ -13,7 +14,7 @@ const MainNavigation : React.FC = () =>{
             <div className="container-fluid">
                 <h1><MdMessage/> Welcome</h1>
                 <form className="d-flex" role="addPost">
-                    <Button icon={<MdPostAdd/>} name='New Post' interact={sayHello} />
+                    <Button icon={<MdPostAdd/>} name='New Post' interact={modalState} />
                 </form>
             </div>
         </nav>
