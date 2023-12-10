@@ -4,13 +4,12 @@ import classes from './Modal.module.css'
 
 interface Props{
     children: React.ReactNode;
-    activated: boolean;
   }
 
-const Modal: React.FC<Props> = ({children, activated}) => {
+const Modal: React.FC<Props> = ({children}) => {
   return (
   <>
-    <dialog className={classes.modal} tabIndex={1} open={activated} > {children} </dialog>
+    <dialog className={classes.backdrop} tabIndex={1} open > {children} </dialog>
   </>
   );
 };
