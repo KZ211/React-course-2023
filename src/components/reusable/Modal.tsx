@@ -3,13 +3,16 @@ import React from "react"
 import classes from './Modal.module.css'
 
 interface Props{
-    children: React.ReactNode;
+    children: React.ReactNode,
+    activated: boolean,
+    closeModalHandler: () => void
   }
 
-const Modal: React.FC<Props> = ({children}) => {
+const Modal: React.FC<Props> = ({children, activated, closeModalHandler}) => {
   return (
   <>
-    <dialog className={classes.backdrop} tabIndex={1} open > {children} </dialog>
+    <div className={classes.backdrop} onClick={closeModalHandler}/>
+    <dialog className={classes.modal} tabIndex={1} open={activated} > {children} </dialog>
   </>
   );
 };
